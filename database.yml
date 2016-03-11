@@ -1,0 +1,19 @@
+---
+development:
+  database: app_ranky
+  host: localhost
+  password: ~
+  port: 3306
+  username: root
+production:
+  database: ladooo_prod
+  host: lad1.ch37hdwoekid.ap-southeast-1.rds.amazonaws.com
+  password: AL!DeXter3
+  port: 3306
+  username: alprodapp
+production_ro:
+  database: ladooo_prod
+  host: lad3.ch37hdwoekid.ap-southeast-1.rds.amazonaws.com
+  password: AL!DeXter3
+  port: 3306
+  username: alprodapp
