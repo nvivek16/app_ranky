@@ -1,6 +1,5 @@
 require 'market_bot'
 require_relative 'app_rank'
-require 'byebug'
 
 class Source
 
