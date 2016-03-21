@@ -36,6 +36,7 @@ class AppDetailScrapper
 	end
 
 	def download_source
+		puts "Scrapping #{@app_name } - #{Time.now}"
 		@source.update()
 	end
 

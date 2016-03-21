@@ -1,0 +1,11 @@
+---
+development:
+  db: 4
+  host: localhost
+  password: ~
+  port: 6379
+production:
+  db: 4
+  host: localhost
+  password: ~
+  port: 6379
