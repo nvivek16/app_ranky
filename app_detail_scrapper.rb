@@ -50,7 +50,7 @@ class AppDetailScrapper
 		if(app_id)
 			update
 		else
-			@client.query("insert into app(`app_store_id`, `title`, `last_updated_at`, `current_version`, `category_id`, `installs`, `description`, `votes`, `banner_icon_url`, `email`, `developer`, `related_apps`, `last_scrapped_at`) VALUES ('#{@app_detail.app_store_id}', '#{@app_detail.title}', '#{@app_detail.last_updated_at.strftime('%F')}', '#{@app_detail.current_version}', '#{@app_detail.category}','#{@app_detail.installs}', '#{@app_detail.description}', '#{@app_detail.votes}', '#{@app_detail.banner_icon_url}', '#{@app_detail.email}', '#{@app_detail.developer}', '#{@app_detail.related_apps}', '#{Time.now.strftime('%F %H:%M:%S')}')");
+			@client.query("insert into app(`app_store_id`, `title`, `last_updated_at`, `current_version`, `category_id`, `installs`, `description`, `votes`, `banner_icon_url`, `email`, `developer`, `related_apps`, `last_scrapped_at`, `status`) VALUES ('#{@app_detail.app_store_id}', '#{@app_detail.title}', '#{@app_detail.last_updated_at.strftime('%F')}', '#{@app_detail.current_version}', '#{@app_detail.category}','#{@app_detail.installs}', '#{@app_detail.description}', '#{@app_detail.votes}', '#{@app_detail.banner_icon_url}', '#{@app_detail.email}', '#{@app_detail.developer}', '#{@app_detail.related_apps}', '#{Time.now.strftime('%F %H:%M:%S')}', 1)");
 		end
 	end
 
@@ -67,7 +67,8 @@ class AppDetailScrapper
 			email = '#{@app_detail.email}',
 			developer = '#{@app_detail.developer}',
 			related_apps = '#{@app_detail.related_apps}',
-			last_scrapped_at = '#{Time.now.strftime('%F %H:%M:%S')}'
+			last_scrapped_at = '#{Time.now.strftime('%F %H:%M:%S')}',
+			status = 1
 			where app_store_id = '#{@app_detail.app_store_id}' limit 1
 		")
 	end
