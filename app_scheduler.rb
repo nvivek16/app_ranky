@@ -4,5 +4,5 @@ require "byebug"
 apps = @read_only_client.query("select app_store_id from app")
 
 apps.each do |app|
-	AppDetailScrapper.new(app['app_store_id']).scrap
+  AppDetailScrapper.new(app['app_store_id']).scrap
 end
